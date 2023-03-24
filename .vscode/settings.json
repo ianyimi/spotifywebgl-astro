@@ -1,5 +1,7 @@
 {
-  "css.customData": ["./vscode.tailwind.json"],
+  "css.customData": [
+    "./vscode.tailwind.json"
+  ],
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -10,8 +12,30 @@
   "files.associations": {
     "*.mdx": "markdown"
   },
-  "prettier.documentSelectors": ["**/*.astro"],
+  "prettier.documentSelectors": [
+    "**/*.astro"
+  ],
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#ff7e33",
+    "activityBar.background": "#ff7e33",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#00802f",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#ff7e33",
+    "statusBar.background": "#ff5e00",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#cc4b00",
+    "statusBarItem.remoteBackground": "#ff5e00",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#ff5e00",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#ff5e0099",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#FF5E00"
 }
