@@ -5,7 +5,6 @@ import { z } from 'zod';
  * built with invalid env vars.
  */
 const server = z.object({
-  NODE_ENV: z.enum(['development', 'test', 'production']),
   // OPENAI_API_KEY: z.string(),
   DATABASE_CONNECTION_STRING: z.string(),
   DATABASE_AUTH_TOKEN: z.string(),
@@ -19,6 +18,7 @@ const server = z.object({
  * built with invalid env vars. To expose them to the client, prefix them with `NEXT_PUBLIC_`.
  */
 const client = z.object({
+  NODE_ENV: z.enum(['development', 'test', 'production']),
   // NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string(),
   // NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN: z.string().min(1),
 });
