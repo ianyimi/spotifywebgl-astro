@@ -10,7 +10,7 @@ export const SpotifyApi = new SpotifyWebApi({
   clientSecret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
 });
 
-export default {
+module.exports = {
   // @ts-ignore
   adapter: DrizzleAdapter(db),
   providers: [
