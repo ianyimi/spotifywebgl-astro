@@ -14,9 +14,7 @@ export default defineConfig({
   integrations: [
     react(),
     tailwind({
-      config: {
-        applyBaseStyles: false,
-      },
+      applyBaseStyles: false,
     }),
     auth(),
     compress({
