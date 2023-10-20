@@ -2,8 +2,7 @@ import SpotifyProvider from '@auth/core/providers/spotify';
 import SpotifyWebApi from 'spotify-web-api-node';
 import { DrizzleAdapter } from '@auth/drizzle-adapter';
 import { db } from '~/db/db';
-
-import { env } from '~/env.mjs';
+import { SPOTIFY_LOGIN_URL } from '~/utils/spotify';
 
 export const SpotifyApi = new SpotifyWebApi({
   clientId: process.env.NEXT_PUBLIC_CLIENT_ID,
@@ -15,8 +14,9 @@ export default {
   adapter: DrizzleAdapter(db),
   providers: [
     SpotifyProvider({
-      clientId: env.SPOTIFY_CLIENT_ID,
-      clientSecret: env.SPOTIFY_CLIENT_SECRET,
+      clientId: import.meta.env.SPOTIFY_CLIENT_ID,
+      clientSecret: import.meta.env.SPOTIFY_CLIENT_SECRET,
+      authorization: SPOTIFY_LOGIN_URL,
     }),
   ],
   // pages: {

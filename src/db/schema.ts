@@ -28,7 +28,7 @@ export const users = sqliteTable('user', {
   subscriptionTier: text('subscriptionTier', {
     enum: ['Free', 'Premium'],
   }).default('Free'),
-  tokens: blob('tokens', { mode: 'buffer' }).$type<string[]>().notNull(),
+  tokens: blob('tokens', { mode: 'buffer' }).$type<string[]>(),
 });
 export type User = InferSelectModel<typeof users>;
 export type NewUser = InferInsertModel<typeof users>;

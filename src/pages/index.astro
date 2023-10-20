@@ -1,5 +1,8 @@
 ---
 import { SignIn, SignOut } from 'auth-astro/components';
+import { getSession } from 'auth-astro/server';
+
+const session = await getSession(Astro.request);
 ---
 
 <html lang="en">
@@ -12,7 +15,18 @@ import { SignIn, SignOut } from 'auth-astro/components';
   </head>
   <body>
     <h1>Astro</h1>
-    <SignIn provider="spotify">Spotify Login</SignIn>
-    <SignOut />
+    {
+      session ? (
+        <>
+          <p>Welcome {session.user?.name}</p>
+          <SignOut />
+        </>
+      ) : (
+        <>
+          <p>Not logged in</p>
+          <SignIn provider="spotify">Spotify Login</SignIn>
+        </>
+      )
+    }
   </body>
 </html>
